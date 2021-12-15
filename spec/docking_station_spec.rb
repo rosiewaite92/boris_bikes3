@@ -19,9 +19,8 @@ it {should respond_to(:release_bike)}
     expect(subject.dock(bike)).to be_working
   end 
 it "raises an error when the docking station is full" do 
-  bike = Bike.new
-  subject.dock(bike)
-  expect {subject.dock(Bike.new)}.to raise_error "Station full"
+  20.times { subject.dock(Bike.new) }
+  expect { subject.dock(Bike.new) }.to raise_error "Station full"
 end 
 
 end 
