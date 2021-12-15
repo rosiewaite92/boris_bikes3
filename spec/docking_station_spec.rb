@@ -27,5 +27,8 @@ describe DockingStation do
     expect { subject.dock(Bike.new) }.to raise_error "Station full"
   end 
 
+  it "defaults to default capcity if no capacity set" do 
+     expect ( subject.capacity).to eq DockingStation::DEFAULT_CAPACITY 
+  end 
 end 
 
