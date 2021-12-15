@@ -36,6 +36,15 @@ describe DockingStation do
     expect(docking_station.capacity).to eq 16
   end 
 
+  it "only releases working bikes" do
+    bike1 = Bike.new
+    bike2 = Bike.new
+    bike2.report_broken
+    subject.dock(bike1)
+    subject.dock(bike2)
+
+    expect(subject.release_bike).to eq bike1
+  end 
 
 end 
 
