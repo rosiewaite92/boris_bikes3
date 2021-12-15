@@ -3,6 +3,7 @@ class DockingStation
   attr_reader :bike
 
   def dock(bike)
+    fail "Station full" if @bike
     @bike = bike 
   end 
 
