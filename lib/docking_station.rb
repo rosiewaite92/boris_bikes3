@@ -5,8 +5,8 @@ class DockingStation
   end
 
   def dock(bike)
-    fail "Station full" if @bike
-    @bike = bike 
+    fail "Station full" if @bikes.count >= 20
+    @bikes << bike 
   end 
 
   def release_bike
